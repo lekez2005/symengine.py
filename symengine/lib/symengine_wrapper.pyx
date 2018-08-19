@@ -1777,6 +1777,10 @@ class RealDouble(Float):
         cdef double i = deref(symengine.rcp_static_cast_RealDouble(self.thisptr)).as_double()
         return sage.RealDoubleField()(i)
 
+    def to_double(Basic self):
+        cdef double i = deref(symengine.rcp_static_cast_RealDouble(self.thisptr)).as_double()
+        return i
+
     def __float__(self):
         return float(str(self))
 
